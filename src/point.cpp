@@ -1,65 +1,56 @@
-#include "point.h"
+#include "../header/point.h"
 
 float force_x = 0;
 float force_y = 150;
 
-Point::Point(float x, float y, float vel_x, float vel_y, float mass) {
-
-    X = x;
-    Y = y;      
-    Vel_x = vel_x;
-    Vel_y = vel_y;
-    Mass = mass;
-
-    shape.setRadius(20.f);
-    shape.setPosition(X, Y);
-}
-
 Point::Point(float x, float y, float mass, bool pinned) {
-    X = x;
-    Y = y;
-    Mass = mass;
+   
+    this->x = x;
+    this->y = y;
+    this->mass = mass;
     this->pinned = pinned;
-    this->old_x = X;
-    this->old_y = Y;
+    this->old_x = x;
+    this->old_y = y;
 
     shape.setFillColor(sf::Color::White);
     shape.setRadius(15.f);
-    shape.setPosition(X, Y);
+    shape.setPosition(x, y);
 }
 
 Point::Point(){}
 
 void Point::update_verlet(float dt) {
+
     if (!this->pinned) {
 
-        Vel_x = this->X - this->old_x;
-        Vel_y = this->Y - this->old_y;
+        vel_x = this->x - this->old_x;
+        vel_y = this->y - this->old_y;
 
-        this->old_x = this->X;
-        this->old_y = this->Y;
+        this->old_x = this->x;
+        this->old_y = this->y;
 
-        float acc_x = force_x / this->Mass;
-        float acc_y = force_y / this->Mass;
+        float acc_x = force_x / this->mass;
+        float acc_y = force_y / this->mass;
 
-        this->X += Vel_x + acc_x * dt * dt;
-        this->Y += Vel_y + acc_y * dt * dt;
+        this->x += vel_x + acc_x * dt * dt;
+        this->y += vel_y + acc_y * dt * dt;
 
-        shape.setPosition(X, Y);
+        shape.setPosition(x, y);
     }
 }
 
 void Point::update(float dt) {
-    float acc_x = force_x / this->Mass;
-    float acc_y = force_y / this->Mass;
 
-    this->Vel_x += acc_x * dt;
-    this->Vel_y += acc_y * dt;
+    float acc_x = force_x / this->mass;
+    float acc_y = force_y / this->mass;
 
-    this->X += this->Vel_x * dt;
-    this->Y += this->Vel_y * dt;
+    this->vel_x += acc_x * dt;
+    this->vel_y += acc_y * dt;
 
-    shape.setPosition(X, Y);
+    this->x += this->vel_x * dt;
+    this->y += this->vel_y * dt;
+
+    shape.setPosition(x, y);
 }
 
 void Point::render(sf::RenderWindow& window) {
@@ -67,26 +58,27 @@ void Point::render(sf::RenderWindow& window) {
 }
 
 void Point::constraint(int Width, int Height) {
-    Vel_x = this->X - this->old_x;
-    Vel_y = this->Y - this->old_y;
 
-    if (this->X < 0) {
-        this->X = 0;
-        this->old_x = this->X + Vel_x;
-    }
-    else if (this->X > Width - 31) {
-        this->X = Width - 31;
-        this->old_x = this->X + Vel_x;
-    }
-    //Add to make a constraint to the top
-    //if (this->Y < 0) {
-    //    this->Y = 0;
-    //    this->old_y = this->Y + Vel_y;
-    //}
+    vel_x = this->x - this->old_x;
+    vel_y = this->y - this->old_y;
 
-    else if (this->Y > Height - 50) {
-        this->Y = Height - 50;
-        this->old_y = this->Y + Vel_y;
+    if (this->x < 0) {
+        this->x = 0;
+        this->old_x = this->x + vel_x;
+    }
+    else if (this->x > Width - 31) {
+        this->x = Width - 31;
+        this->old_x = this->x + vel_x;
+    }
+
+    if (this->y < 0) {
+        this->y = 0;
+        this->old_y = this->y + vel_y;
+    }
+
+    else if (this->y > Height - 50) {
+        this->y = Height - 50;
+        this->old_y = this->y + vel_y;
     }
 }
 
