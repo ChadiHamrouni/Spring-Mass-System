@@ -1,9 +1,8 @@
 # Spring-Mass-System
 ![Spring Mass Structures](https://github.com/ChadiHamrouni/Spring-Mass-System/assets/69485266/e295b348-d7c2-436f-b281-a8cded1e1f26)
 
-<p align="center">
-  <img src="downloads/gif.gif" width="500" height="300">
-</p>
+  <img src="C:/Users/shady/Dropbox/PC/Desktop/Studies/gif.gif" width="1280" height="720">
+
 
 
 ## Description
