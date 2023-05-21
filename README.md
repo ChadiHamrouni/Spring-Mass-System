@@ -17,7 +17,7 @@ The full verlet equation looks like this:
 
 Which translates in our code to:
 
-this->x += vel_x + acc_x * dt * dt;
+this->x += vel_x + acc_x * dt * dt;<br>
 this->y += vel_y + acc_y * dt * dt;
 
 5. we set the new position using the predefined function **setPosition(x, y)**
