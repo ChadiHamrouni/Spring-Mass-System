@@ -14,16 +14,16 @@ If the point is not pinned (static):
 
 **2.** We store the current positions as old positions inside **old_x & old_y** to be used in the next frame.
 
-**3.** We calculate the accelerations using F = ma.
+**3.** We calculate the accelerations using **F = ma**.
 
-**4.** We apply the Verlet equation by adding the current position to the velocities calculated in step 1 and add the acceleration calculated in step 3 and we by dt².
+**4.** We apply the Verlet equation by adding the current position to the velocities calculated in *step 1* and add the acceleration calculated in *step 3* and we by **dt²**.
 
 **New Position = Current Position + Current Velocity + Acceleration * Dt²**
 
 Which translates in our code to:
 
-this->x += vel_x + acc_x * dt * dt;<br>
-this->y += vel_y + acc_y * dt * dt;
+**this->x += vel_x + acc_x * dt * dt;<br>
+this->y += vel_y + acc_y * dt * dt;**
 
 **5.** we set the new position using the predefined function **setPosition(x, y)**.
 
