@@ -1,8 +1,9 @@
 #pragma once
 #include "point.h"
-class Stick {
-public:
 
+class Stick {
+    
+public:
     float Length;
     Point& P0;
     Point& P1;
