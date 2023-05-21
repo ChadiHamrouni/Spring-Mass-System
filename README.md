@@ -11,14 +11,14 @@ as a parameter update_verlet will update the positions of the points in the foll
 
 If the point is not pinned (static):<br>
 
-1. We calculate the current velocity **vel_x & vel_y** by subtracting the old position **old_x & old_y** from the current 
+**1.** We calculate the current velocity **vel_x & vel_y** by subtracting the old position **old_x & old_y** from the current 
 position **x & y**.
 
-2. We store the current positions as old positions inside **old_x & old_y** to be used in the next frame.
+**2.** We store the current positions as old positions inside **old_x & old_y** to be used in the next frame.
 
-3. We calculate the accelerations using F = ma.
+**3.** We calculate the accelerations using F = ma.
 
-4. We apply the Verlet equation by adding the current position to the velocities calculated in step 1 and add the 
+**4.** We apply the Verlet equation by adding the current position to the velocities calculated in step 1 and add the 
 acceleration calculated in step 3 and we by dt².<br>
 
 **New Position = Current Position + Current Velocity + Acceleration * Dt²**<br>
@@ -27,8 +27,7 @@ Which translates in our code to:<br>
 this->x += vel_x + acc_x * dt * dt;<br>
 this->y += vel_y + acc_y * dt * dt;
 
-5. we set the new position using the predefined function **setPosition(x, y)**.<br>
-
+**5.** we set the new position using the predefined function **setPosition(x, y)**.<br>
 
 The **update_verlet** will be called in each frame to update the positions, since we setup SFML to run our window on 60 FPS it will be called 60 times per second.
 
