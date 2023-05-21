@@ -15,5 +15,4 @@ public:
     void render(sf::RenderWindow& window);
 
     float distance(Point p0, Point p1);
-
 };
