@@ -6,7 +6,6 @@ In this implemenetation collision is ignored since it's not the purpose of the p
 
 * In order to run this project you need to have SFML setup on your machine.
 Here's a quick tutorial: https://youtu.be/VWWSc2nqrEA.
-
-**Note**:
-While making new structures making make sure to give enough support by providing an adequate number of constriants (sticks) or the structure can either collapse, explode or behave in an unexpected way.
-
+### Note
+* While making new structures making make sure to give enough support by providing an adequate number of constriants (sticks) or the structure can either collapse, explode or behave in an unexpected way.
+* The creation of structures in a static way as I did in the main is inefficient and should be replaced with dynamic allocation and freeing up memory after usage. 
