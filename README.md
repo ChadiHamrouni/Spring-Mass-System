@@ -1,5 +1,5 @@
 # Spring-Mass-System
- <img src="C:/Users/shady/Dropbox/PC/Desktop/Studies/gif.gif" width="1280" height="720">
+![gif](https://github.com/ChadiHamrouni/Spring-Mass-System/assets/69485266/2363989e-dd07-41ee-8000-5e0905283290)
 
 
 
