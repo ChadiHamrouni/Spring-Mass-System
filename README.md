@@ -27,13 +27,13 @@ this->y += vel_y + acc_y * dt * dt;**
 
 **5.** We set the new position using the predefined function **setPosition(x, y)**.
 
-The **update_verlet** will be called in each frame to update the point positions, since we setup SFML to run our window on 60 FPS it will be called 60 times per second.
+The **update_verlet** will be called in each frame to update the point positions, since we setup SFML to run our window on 60 FPS, it will be called 60 times per second.
 
 ## Build
 * In order to run this project you need to have SFML setup on your machine.
 Here's a quick tutorial: https://youtu.be/VWWSc2nqrEA.
 
 ## Notes
-* While making new structures making make sure to give enough support by providing an adequate number of constriants (sticks) or the structure can either collapse, explode or behave in an unexpected way.
+* While making new structures make sure to give enough support by providing an adequate number of constriants (sticks) or the structure will either collapse, explode or behave in an unexpected way.
 
-* The creation of structures in a static way as I did in the main is inefficient and should be replaced with dynamic allocation and freeing up memory after usage. 
+* The static creation of structures as I did in the main function is inefficient and should be replaced with dynamic allocation and freeing up memory after usage. 
