@@ -7,6 +7,6 @@ In this implemenetation collision is ignored since it's not the purpose of the p
 * In order to run this project you need to have SFML setup on your machine.
 Here's a quick tutorial: https://youtu.be/VWWSc2nqrEA.
 
-*Note*
+**Note**:
 While making new structures making make sure to give enough support by providing an adequate number of constriants (sticks) or the structure can either collapse, explode or behave in an unexpected way.
 
