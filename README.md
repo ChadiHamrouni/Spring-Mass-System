@@ -1,7 +1,5 @@
 # Spring-Mass-System
-![gif](https://github.com/ChadiHamrouni/Spring-Mass-System/assets/69485266/2363989e-dd07-41ee-8000-5e0905283290)
-
-
+![sqd](https://github.com/ChadiHamrouni/Spring-Mass-System/assets/69485266/86af20d8-8c9f-4486-8471-ce3557d4eced)
 
 ## Description
 * This project implements a **Verlet integration based Spring-Mass System using C++ & SFML**.
