@@ -3,16 +3,18 @@
 
 ### Description
 * This project implements a **Verlet integration based Spring-Mass System using C++ & SFML**.
-In this implemenetation collision is ignored since it's not the purpose of the project. 
-Verlet Integration is implemented in the function **update_verlet** inside the Point class. After taking the timestep (dt) as a parameter update_verlet updates the positions of the points in the following way:
+In this implementation collision is ignored since it's not the purpose of the project. 
+Verlet Integration is implemented in the function **update_verlet** inside the Point class. After taking the timestep (dt) as a parameter update_verlet will update the positions of the points in the following way:
 If the point is not pinned (static):
-1. We calculate the velocity **vel_x & vel_y** by subtracting the old position **old_x & old_y** from the current position **x & y**.
-2. We store the current positions as old positions inside old_x and old_y to be used in the next frame.
+1. We calculate the current velocity **vel_x & vel_y** by subtracting the old position **old_x & old_y** from the current position **x & y**.
+2. We store the current positions as old positions inside **old_x & old_y** to be used in the next frame.
 3. We calculate the accelerations using F = ma.
-4. We apply the Verlet equation by adding the current position to the velocities calculated in step 1 and adding the acceleration calculated in step 3 and multiplying by dt².
+4. We apply the Verlet equation by adding the current position to the velocities calculated in step 1 and add the acceleration calculated in step 3 and we by dt².
+
 The full verlet equation looks like this:
 
 **New Position = Current Position + Current Velocity + Acceleration * Dt²**
+
 Which translates in our code to:
 
 this->x += vel_x + acc_x * dt * dt;
