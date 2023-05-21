@@ -39,20 +39,6 @@ void Point::update_verlet(float dt) {
     }
 }
 
-void Point::update(float dt) {
-
-    float acc_x = force_x / this->mass;
-    float acc_y = force_y / this->mass;
-
-    this->vel_x += acc_x * dt;
-    this->vel_y += acc_y * dt;
-
-    this->x += this->vel_x * dt;
-    this->y += this->vel_y * dt;
-
-    shape.setPosition(x, y);
-}
-
 void Point::render(sf::RenderWindow& window) {
     window.draw(shape);
 }
