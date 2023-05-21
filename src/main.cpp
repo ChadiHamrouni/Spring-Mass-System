@@ -14,7 +14,7 @@ int main()
     window.setFramerateLimit(60);
     sf::Clock clock;
 
-    sf::Color Red(235, 69, 95);
+    sf::Color red(235, 69, 95);
     sf::Color blue(0, 255, 202);
     sf::Color green(13, 84, 93);
 
@@ -60,7 +60,7 @@ int main()
     };
 
     for (int i = 0; i < NUM_OBJECTS; i++) {
-        points[i].shape.setFillColor(Red);
+        points[i].shape.setFillColor(red);
     }
       
     const int NUM_STICKS = 13;
