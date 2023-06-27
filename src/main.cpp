@@ -13,7 +13,6 @@ int main()
     sf::RenderWindow window(sf::VideoMode(Width, Height), "Verlet Integration", sf::Style::Default, settings);
     window.setFramerateLimit(60);
     sf::Clock clock;
-
     sf::Color red(235, 69, 95);
     sf::Color blue(0, 255, 202);
     sf::Color green(13, 84, 93);
